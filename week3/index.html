@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Question no1 -->
+    <!-- <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas recusandae, suscipit quasi odio cum in eum fugit fuga saepe aperiam veniam, consequatur illum distinctio culpa nisi doloremque iusto dolorum repudiandae!</p>
+    <button id="butn">Click Me</button>
+    <button onclick="mystyle()">Click Me</button> inline  -->
+
+
+    <!-- <script>
+        let btn=document.getElementById("butn")
+        btn.addEventListener('click',()=>{
+            para.style.fontSize= '30px';
+            para.style.color= 'red';
+            para.style.fontFamily="Cosmic Sans MS";
+        })
+// DOM
+        // function mystyle(){
+        //     para.style.color="red";
+        //     para.style.fontSize="20px"
+        // }
+    </script> -->
+
+
+    <!-- Question no.2 -->
+    <!-- <select id="colorSelect">
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Black</option>
+        <option>Green</option>
+    </select>
+    <button onclick="dropdown()">Click Me</button>
+
+    <script>
+        function dropdown() {
+            let x = document.getElementById('colorSelect')
+            const selectedIndex = dropdown.selectedIndex;
+
+            // Remove the selected option
+
+            x.options[selectedIndex].remove();
+        }
+    </script> -->
+
+    <!-- Question no. 3 -->
+    <p>Enter the radius of the sphere:</p>
+    <input type="number" id="radius">
+    <button onclick="calculateVolume()">Calculate Volume</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateVolume() {
+            // Get the radius from the input element
+            const radius = document.getElementById("radius").value;
+
+            // Calculate the volume
+            const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+            // Display the result
+            document.getElementById("result").innerHTML = "The volume of the sphere is " + volume + ".";
+        }
+
+    </script>
+</body>
+
+</html>
