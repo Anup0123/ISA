@@ -17,7 +17,7 @@
 //     },2000)
 // }
 
-// function createPost(post,getPost){
+// function createPost(post,getPost){  //getPost as call back function.
 //     setTimeout(()=>{
 //         Posts.push(post)
 //         getPost();
