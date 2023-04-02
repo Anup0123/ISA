@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Week5 Tutorial</h1>
+    <div id="section"></div>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/photos')
+        .then(response=>response.json())
+        .then(data=>{
+            data.forEach((api)=>{
+                if(api.id==70){
+                    const img=document.createElement('img')
+                   img.src=`${api.url}`
+                   let display=document.getElementById('section');
+                   display.appendChild(img);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

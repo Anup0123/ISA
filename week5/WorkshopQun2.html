@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<label>Movie title:</label>
+	<input type="text" id="title"><br>
+	<button id="search">Search</button>
+    <p id="movie"></p>
+
+	<script>
+		const apiKey = 'b4cdfba7';
+		const searchBtn = document.getElementById("search");
+		searchBtn.addEventListener("click", async () => {
+            const title = document.getElementById("title").value;
+           console.log(title)
+		   const movie = document.getElementById("movie");
+		   movie.innerHTML='';
+			try {
+				const response = await fetch(`https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
+				const data = await response.json();
+                console.log(data)
+				const title1 = document.createElement("h2");
+				title1.textContent = `Title:${data.Title}`;
+				movie.appendChild(title1);
+				const Rating=document.createElement('p');
+				Rating.textContent=`imdbRating:${data.imdbRating}`;
+				movie.appendChild(Rating);
+			} catch (error) {
+				document.getElementById('movie').innerHTML=error;
+			}
+		});
+	</script>
+</body>
+</html>

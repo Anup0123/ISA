@@ -14,63 +14,22 @@
           font-size: 72px;
           font-weight: bold;
           color: black;
-          padding-top: 200px;
+          padding-top: 50px;
         }
       </style>
     </head>
     <body>
-      <div id="clock"></div>
-      <!-- <script src="clock.js"></script> -->
-    <!-- <div class="container">
-    <div class="hour">
-        <h1>Hour:</h1>
-        <input type="number" id="hours">
-
-    </div>
-    <div class="min">
-        <h1>Minute:</h1>
-        <input type="number">
-        <p id="minute"></p>
-    </div>
-    <div class="sec">
-        <h1>Second:</h1>
-        <p id="second"></p>
-    </div>
-</div>
-
-    <script>
-        let count=0;
-        let counter=document.getElementById('second');
-        function updateCounter(){
-            count++;
-            counter.innerText=count;
-            
-        }
-        setInterval(updateCounter,1000);
-
-        let count1=0;
-        let counter1=document.getElementById('minute');
-        function minuteCounter(){
-            count1++;
-            counter1.innerText=count;
-            
-        }
-        setInterval(minuteCounter,60000);
-    </script>  -->
+    <h1 style="text-align: center;font-size: 80px;">Digital clock</h1>
     <p id="clock"></p>
     <script>
-        // Get the clock element from the DOM
 const clock = document.getElementById('clock');
 
-// Update the clock every second
-setInterval(() => {
-  // Create a new Date object
-  const now = new Date();
+function digitaltime() {
+  const date = new Date();
 
-  // Get the current time
-  let hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
   let AMPM=' '
   if(hours>12){
     AMPM='PM';
@@ -80,10 +39,9 @@ setInterval(() => {
   }
   hours=hours %12 || 12;
   const time=`${hours}:${minutes}:${seconds}:${AMPM}`;
-  // Update the clock element with the formatted time
   clock.innerHTML = time;
-}, 1000);
-
+}
+setInterval(digitaltime,1000);
     </script>
 </body>
 </html>
